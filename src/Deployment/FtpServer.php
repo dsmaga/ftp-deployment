@@ -199,8 +199,17 @@ class FtpServer implements Server
 		}
 	}
 
+    /**
+     * Sets the permissions on the specified remote file to mode.
+     * @param int $mode
+     * @param string $filename
+     * @return mixed
+     */
+    public function chmod($mode, $filename) {
+        return $this->ftp('chmod', $mode, $filename);
+    }
 
-	/**
+    /**
 	 * Recursive deletes content of directory or file.
 	 * @param  string
 	 * @return void
